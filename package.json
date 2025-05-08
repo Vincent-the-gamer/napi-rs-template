@@ -1,0 +1,41 @@
+{
+  "name": "napi-rs-template",
+  "description": "_description_",
+  "author": "Vincent-the-gamer",
+  "version": "1.0.0",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "files": [
+    "**.node"
+  ],
+  "napi": {
+    "name": "napi-rs-template",
+    "triples": {
+      "additional": [
+        "aarch64-apple-darwin"
+      ]
+    }
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@napi-rs/cli": "^2.18.4",
+    "@types/node": "^22.15.16",
+    "tsx": "^4.19.4"
+  },
+  "ava": {
+    "timeout": "3m"
+  },
+  "engines": {
+    "node": ">= 10"
+  },
+  "scripts": {
+    "artifacts": "napi artifacts",
+    "build": "napi build --platform --release",
+    "dev": "napi build --platform",
+    "prepublishOnly": "napi prepublish -t npm",
+    "test": "tsx",
+    "clean": "tsx ./clean.ts",
+    "universal": "napi universal",
+    "version": "napi version"
+  }
+}
