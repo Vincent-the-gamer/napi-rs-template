@@ -1,4 +1,4 @@
 // Manual test
-import { sum } from "../index.js"
+import { sum, hello } from "../index.js"
 
-console.log(sum(1, 2))
+console.log(hello(), sum(1, 2))
