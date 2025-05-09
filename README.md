@@ -23,7 +23,6 @@ yarn install
 yarn dev
 ```
 
-
 # Publish
 
 > [!NOTE]

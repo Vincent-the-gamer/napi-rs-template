@@ -38,12 +38,5 @@
     "clean": "tsx ./clean.ts",
     "rename": "napi rename",
     "version": "napi version"
-  },
-  "optionalDependencies": {
-    "@vince-gamer/napi-rs-template-win32-x64-msvc": "1.0.0",
-    "@vince-gamer/napi-rs-template-darwin-x64": "1.0.0",
-    "@vince-gamer/napi-rs-template-linux-x64-gnu": "1.0.0",
-    "@vince-gamer/napi-rs-template-darwin-arm64": "1.0.0",
-    "@vince-gamer/napi-rs-template-win32-arm64-msvc": "1.0.0"
   }
 }
