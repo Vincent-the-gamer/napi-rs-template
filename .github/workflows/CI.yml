@@ -57,9 +57,6 @@ jobs:
             build: |
               yarn build --target armv7-unknown-linux-gnueabihf
           - host: ubuntu-latest
-            target: aarch64-linux-android
-            build: yarn build --target aarch64-linux-android
-          - host: ubuntu-latest
             target: armv7-linux-androideabi
             build: yarn build --target armv7-linux-androideabi
           - host: windows-latest
