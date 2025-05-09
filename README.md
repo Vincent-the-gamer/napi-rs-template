@@ -34,6 +34,4 @@ yarn dev
 Removed: 
 - target: `freebsd`.
 - target: `aarch64-unknown-linux-musl` because docker build failed.
-- target: `aarch64-linux-android`
 - job: `Lint`
-- test: `aarch64-unknown-linux-gnu`
