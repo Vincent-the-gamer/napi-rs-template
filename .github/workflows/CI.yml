@@ -23,24 +23,7 @@ permissions:
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
-jobs:
-  setup:
-    name: Setup
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-
-      - name: Update npm & Install pnpm
-        run: npm i pnpm@latest -g
-
-      - name: Install dependencies
-        run: pnpm install --no-frozen-lockfile
-
-      - name: Setup node
-        uses: actions/setup-node@v4
-        with:
-          node-version: 22
-          cache: pnpm
+jobs:  
   build:
     strategy:
       fail-fast: false
@@ -90,10 +73,17 @@ jobs:
           - host: windows-latest
             target: aarch64-pc-windows-msvc
             build: pnpm build --target aarch64-pc-windows-msvc
-    name: stable - ${{ matrix.settings.target }} - node@18
+    name: stable - ${{ matrix.settings.target }} - node@22
     runs-on: ${{ matrix.settings.host }}
     steps:
       - uses: actions/checkout@v4
+
+      - name: Install pnpm
+        run: npm i pnpm@latest -g
+
+      - name: Install dependencies
+        run: pnpm install --no-frozen-lockfile
+
       - name: Setup node
         uses: actions/setup-node@v4
         if: ${{ !matrix.settings.docker }}
@@ -124,8 +114,13 @@ jobs:
         run: ${{ matrix.settings.setup }}
         if: ${{ matrix.settings.setup }}
         shell: bash
+
+      - name: Install pnpm
+        run: npm i pnpm@latest -g
+
       - name: Install dependencies
-        run: pnpm install
+        run: pnpm install --no-frozen-lockfile
+
       - name: Build in docker
         uses: addnab/docker-run-action@v3
         if: ${{ matrix.settings.docker }}
@@ -212,14 +207,20 @@ jobs:
     runs-on: ${{ matrix.settings.host }}
     steps:
       - uses: actions/checkout@v4
+
+      - name: Install pnpm
+        run: npm i pnpm@latest -g
+
       - name: Setup node
         uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node }}
           cache: pnpm
           architecture: ${{ matrix.settings.architecture }}
+
       - name: Install dependencies
-        run: pnpm install
+        run: pnpm install --no-frozen-lockfile
+
       - name: Download artifacts
         uses: actions/download-artifact@v4
         with:
@@ -243,13 +244,19 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
+      - name: Install pnpm
+        run: npm i pnpm@latest -g
+
       - name: Setup node
         uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node }}
           cache: pnpm
+        
       - name: Install dependencies
-        run: pnpm install
+        run: pnpm install --no-frozen-lockfile
+
       - name: Download artifacts
         uses: actions/download-artifact@v4
         with:
@@ -273,15 +280,20 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
+      - name: Install pnpm
+        run: npm i pnpm@latest -g
+
       - name: Setup node
         uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node }}
           cache: pnpm
+
       - name: Install dependencies
         run: |
           pnpm config set supportedArchitectures.libc "musl"
-          pnpm install
+          pnpm install --no-frozen-lockfile
       - name: Download artifacts
         uses: actions/download-artifact@v4
         with:
@@ -305,6 +317,9 @@ jobs:
     runs-on: ubuntu-24.04-arm
     steps:
       - uses: actions/checkout@v4
+      - name: Install pnpm
+        run: npm i pnpm@latest -g
+
       - name: Download artifacts
         uses: actions/download-artifact@v4
         with:
@@ -317,7 +332,7 @@ jobs:
         run: |
           pnpm config set supportedArchitectures.cpu "arm64"
           pnpm config set supportedArchitectures.libc "glibc"
-          pnpm install
+          pnpm install --no-frozen-lockfile
       - name: Setup and run tests
         uses: addnab/docker-run-action@v3
         with:
@@ -334,6 +349,9 @@ jobs:
     runs-on: ubuntu-24.04-arm
     steps:
       - uses: actions/checkout@v4
+      - name: Install pnpm
+        run: npm i pnpm@latest -g
+
       - name: Download artifacts
         uses: actions/download-artifact@v4
         with:
@@ -346,7 +364,7 @@ jobs:
         run: |
           pnpm config set supportedArchitectures.cpu "arm64"
           pnpm config set supportedArchitectures.libc "musl"
-          pnpm install
+          pnpm install --no-frozen-lockfile
       - name: Setup and run tests
         uses: addnab/docker-run-action@v3
         with:
@@ -368,6 +386,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - name: Install pnpm
+        run: npm i pnpm@latest -g
+
       - name: Download artifacts
         uses: actions/download-artifact@v4
         with:
@@ -379,7 +400,7 @@ jobs:
       - name: Install dependencies
         run: |
           pnpm config set supportedArchitectures.cpu "arm"
-          pnpm install
+          pnpm install --no-frozen-lockfile
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v3
         with:
@@ -406,6 +427,9 @@ jobs:
       - test-linux-aarch64-musl-binding
       - test-linux-arm-gnueabihf-binding
     steps:
+      - name: Install pnpm
+        run: npm i pnpm@latest -g
+
       - uses: actions/checkout@v4
       - name: Setup node
         uses: actions/setup-node@v4
@@ -413,7 +437,7 @@ jobs:
           node-version: 22
           cache: pnpm
       - name: Install dependencies
-        run: pnpm install
+        run: pnpm install --no-frozen-lockfile
       - name: Download all artifacts
         uses: actions/download-artifact@v4
         with:
