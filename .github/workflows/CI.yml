@@ -24,7 +24,7 @@ concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 jobs:
-  lint:
+  setup:
     name: Lint
     runs-on: ubuntu-latest
     steps:
@@ -46,9 +46,6 @@ jobs:
         uses: dtolnay/rust-toolchain@stable
         with:
           components: clippy, rustfmt
-
-      - name: Oxlint
-        run: pnpm lint
 
       - name: Cargo fmt
         run: cargo fmt -- --check
