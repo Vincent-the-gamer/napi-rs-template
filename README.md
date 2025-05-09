@@ -14,13 +14,13 @@ Napi-rs is a framework to build Node.js libraries in Rust.
 
 ```shell
 cargo check
-pnpm i
+yarn install
 ```
 
 ## Debug
 
 ```shell
-pnpm run dev
+yarn dev
 ```
 
 
@@ -31,3 +31,5 @@ pnpm run dev
 > so it's better to name your package using `npm scope`.
 
 `Napi-rs` is using `GitHub Actions` to cross build multiple `.node` binaries.
+
+Removed: `freebsd`.
