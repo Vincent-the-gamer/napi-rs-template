@@ -31,4 +31,7 @@ yarn dev
 
 `Napi-rs` is using `GitHub Actions` to cross build multiple `.node` binaries.
 
-Removed: `freebsd`.
+Removed: 
+- target: `freebsd`.
+- target: `aarch64-unknown-linux-musl` because of docker build failed.
+- job: `Lint`
