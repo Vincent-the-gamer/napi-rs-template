@@ -30,8 +30,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Install pnpm
-        run: npm i -g pnpm
+      - name: Update npm & Install pnpm
+        run: npm i npm@latest pnpm@latest -g
 
       - name: Install dependencies
         run: pnpm install
@@ -47,12 +47,12 @@ jobs:
         with:
           components: clippy, rustfmt
 
-      - name: Install dependencies
-        run: pnpm install
       - name: Oxlint
         run: pnpm lint
+
       - name: Cargo fmt
         run: cargo fmt -- --check
+        
       - name: Clippy
         run: cargo clippy
   build:
