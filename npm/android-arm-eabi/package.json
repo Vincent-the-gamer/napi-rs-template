@@ -1,5 +1,5 @@
 {
-  "name": "@napi-rs/package-template-android-arm-eabi",
+  "name": "@vince-gamer/package-template-android-arm-eabi",
   "version": "1.0.0",
   "os": [
     "android"
