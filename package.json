@@ -19,7 +19,7 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "@vince-gamer/cli": "^2.18.4",
+    "@napi-rs/cli": "^2.18.4",
     "@types/node": "^22.15.16",
     "tsx": "^4.19.4"
   },
