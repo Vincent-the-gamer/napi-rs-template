@@ -6,7 +6,8 @@ Napi-rs is a framework to build Node.js libraries in Rust.
 
 - No `ava`, test your library in `.ts` file using `tsx`
 - Default using `async` feature in `napi`
-- Quick clean debug build files by `pnpm run clean`
+- Quick clean debug build files by `yarn clean`
+- Simplified CI.
 
 # Dev
 
@@ -31,7 +32,10 @@ yarn dev
 
 `Napi-rs` is using `GitHub Actions` to cross build multiple `.node` binaries.
 
-Removed: 
-- target: `freebsd`.
-- target: `aarch64-unknown-linux-musl` because docker build failed.
-- job: `Lint`
+Only:
+
+- `x86_64-apple-darwin`
+- `x86_64-pc-windows-msvc`
+- `x86_64-unknown-linux-gnu`
+- `aarch64-apple-darwin`
+- `aarch64-pc-windows-msvc`
