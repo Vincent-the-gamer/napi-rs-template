@@ -16,5 +16,6 @@
   "license": "MIT",
   "engines": {
     "node": ">= 10"
-  }
+  },
+  "repository": "https://github.com/Vincent-the-gamer/napi-rs-template"
 }
