@@ -1,6 +1,6 @@
 {
-  "name": "napi-rs-template-win32-x64-msvc",
-  "version": "0.0.0",
+  "name": "@vince-gamer/napi-rs-template-win32-x64-msvc",
+  "version": "1.0.0",
   "os": [
     "win32"
   ],
@@ -11,6 +11,8 @@
   "files": [
     "napi-rs-template.win32-x64-msvc.node"
   ],
+  "description": "_description_",
+  "author": "Vincent-the-gamer",
   "license": "MIT",
   "engines": {
     "node": ">= 10"

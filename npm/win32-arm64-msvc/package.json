@@ -1,15 +1,15 @@
 {
-  "name": "@vince-gamer/napi-rs-template-darwin-arm64",
+  "name": "@vince-gamer/napi-rs-template-win32-arm64-msvc",
   "version": "1.0.0",
   "os": [
-    "darwin"
+    "win32"
   ],
   "cpu": [
     "arm64"
   ],
-  "main": "napi-rs-template.darwin-arm64.node",
+  "main": "napi-rs-template.win32-arm64-msvc.node",
   "files": [
-    "napi-rs-template.darwin-arm64.node"
+    "napi-rs-template.win32-arm64-msvc.node"
   ],
   "description": "_description_",
   "author": "Vincent-the-gamer",

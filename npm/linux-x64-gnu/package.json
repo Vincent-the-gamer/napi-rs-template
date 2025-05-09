@@ -1,6 +1,6 @@
 {
-  "name": "napi-rs-template-linux-x64-gnu",
-  "version": "0.0.0",
+  "name": "@vince-gamer/napi-rs-template-linux-x64-gnu",
+  "version": "1.0.0",
   "os": [
     "linux"
   ],
@@ -11,6 +11,8 @@
   "files": [
     "napi-rs-template.linux-x64-gnu.node"
   ],
+  "description": "_description_",
+  "author": "Vincent-the-gamer",
   "license": "MIT",
   "engines": {
     "node": ">= 10"

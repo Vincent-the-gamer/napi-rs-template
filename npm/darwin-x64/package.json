@@ -1,6 +1,6 @@
 {
-  "name": "napi-rs-template-darwin-x64",
-  "version": "0.0.0",
+  "name": "@vince-gamer/napi-rs-template-darwin-x64",
+  "version": "1.0.0",
   "os": [
     "darwin"
   ],
@@ -11,6 +11,8 @@
   "files": [
     "napi-rs-template.darwin-x64.node"
   ],
+  "description": "_description_",
+  "author": "Vincent-the-gamer",
   "license": "MIT",
   "engines": {
     "node": ">= 10"
