@@ -8,7 +8,7 @@
   "repository": "https://github.com/Vincent-the-gamer/napi-rs-template",
   "napi": {
     "binaryName": "napi-rs-template",
-    "targets": {
+    "triples": {
       "additional": [
         "aarch64-apple-darwin"
       ]
@@ -29,12 +29,13 @@
   "scripts": {
     "artifacts": "napi artifacts",
     "build": "napi build --platform --release",
+    "build:cross": "napi build --platform --release --use-cross",
     "dev": "napi build --platform",
+    "dev:cross": "napi build --platform --use-cross",
     "prepublishOnly": "napi prepublish -t npm --skip-gh-release",
     "test": "tsx",
     "clean": "tsx ./clean.ts",
     "rename": "napi rename",
-    "version": "napi version",
-    "napi": "napi"
+    "version": "napi version"
   }
 }

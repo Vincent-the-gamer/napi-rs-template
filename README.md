@@ -23,6 +23,9 @@ yarn install
 
 ```shell
 yarn dev
+
+# Cross Platform
+yarn dev:cross
 ```
 
 # Build & Publish
@@ -34,7 +37,7 @@ yarn dev
 ## Locally
 
 > [!CAUTION]
-> The `--use-cross` command only supported in pre-release version of `@napi-rs/cli` on May 10,
+> The `--use-cross` option only supported in **pre-release version** of `@napi-rs/cli` on May 10,
 > 2025. Use at your own risk!
 
 Build different binary targets using `cross-rs`
@@ -42,7 +45,7 @@ Build different binary targets using `cross-rs`
 `cross-rs` requires `Docker` or `Podman` to build this project in different OS images.
 
 ```shell
-napi build --platform --release --use-cross --target x86_64-unknown-linux-gnu
+yarn build:cross --target x86_64-unknown-linux-gnu
 ```
 
 ## GitHub Actions
