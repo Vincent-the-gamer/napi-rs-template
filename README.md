@@ -34,7 +34,8 @@ yarn dev
 ## Locally
 
 > [!CAUTION]
-> The `--use-cross` command only supported in pre-release version of `@napi-rs/cli` on May 10,  > 2025. Use at your own risk!
+> The `--use-cross` command only supported in pre-release version of `@napi-rs/cli` on May 10,
+> 2025. Use at your own risk!
 
 Build different binary targets using `cross-rs`
 
