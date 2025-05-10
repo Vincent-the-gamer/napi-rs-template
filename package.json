@@ -7,8 +7,8 @@
   "types": "index.d.ts",
   "repository": "https://github.com/Vincent-the-gamer/napi-rs-template",
   "napi": {
-    "name": "napi-rs-template",
-    "triples": {
+    "binaryName": "napi-rs-template",
+    "targets": {
       "additional": [
         "aarch64-apple-darwin"
       ]
@@ -16,7 +16,7 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "@napi-rs/cli": "^2.18.4",
+    "@napi-rs/cli": "3.0.0-alpha.76",
     "@types/node": "^22.15.16",
     "tsx": "^4.19.4"
   },
@@ -34,6 +34,7 @@
     "test": "tsx",
     "clean": "tsx ./clean.ts",
     "rename": "napi rename",
-    "version": "napi version"
+    "version": "napi version",
+    "napi": "napi"
   }
 }

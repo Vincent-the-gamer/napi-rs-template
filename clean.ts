@@ -6,7 +6,7 @@ const dotNodeFiles = [
     "darwin-x64",
     "linux-x64-gnu",
     "win32-x64-msvc"
-].map(i => `${napi.name}.${i}.node`)
+].map(i => `${napi.binaryName}.${i}.node`)
 
 const buildFileList = [
     "index.js",

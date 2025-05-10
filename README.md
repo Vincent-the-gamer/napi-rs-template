@@ -8,6 +8,7 @@ Napi-rs is a framework to build Node.js libraries in Rust.
 - Default using `async` feature in `napi`
 - Quick clean debug build files by `yarn clean`
 - Simplified CI.
+- Local cross build, powered by `cross-rs`
 
 # Dev
 
@@ -24,13 +25,28 @@ yarn install
 yarn dev
 ```
 
-# Publish
+# Build & Publish
 
 > [!NOTE]
 > Napi-rs will release multiple packages for different OS,
 > so it's better to name your package using `npm scope`.
 
-`Napi-rs` is using `GitHub Actions` to cross build multiple `.node` binaries.
+## Locally
+
+> [!CAUTION]
+> The `--use-cross` command only supported in pre-release version of `@napi-rs/cli` on May 10,  > 2025. Use at your own risk!
+
+Build different binary targets using `cross-rs`
+
+`cross-rs` requires `Docker` or `Podman` to build this project in different OS images.
+
+```shell
+napi build --platform --release --use-cross --target x86_64-unknown-linux-gnu
+```
+
+## GitHub Actions
+
+[CI.yml](.github/workflows/CI.yml)
 
 Only:
 
